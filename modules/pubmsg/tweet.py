@@ -28,6 +28,7 @@ class tweet:
             if not tweetData['text']:
                 return "No tweets found on this page."
             tweet = tweetData['text']
+            tweet = tweet.replace('\r', ' ').replace('\n', ' ')
             name = tweetData['user']['name']
             handle = tweetData['user']['screen_name']
             time = tweetData['created_at'][:10]
